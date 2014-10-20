@@ -13,6 +13,8 @@
       Collection.find(function(err, collections){
         if (err) {
           return handleError(res, err);
+        } else {
+          res.json(200, collections);
         }
       });
     },
