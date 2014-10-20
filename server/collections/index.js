@@ -4,7 +4,6 @@
 
   module.exports = function(app) {
 
-    // Setup API on /collections 
     app.get('/', collectionController.fetchAll);
     app.get('/:id', collectionController.fetchOne);
     app.post('/', collectionController.addCollection);
