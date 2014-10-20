@@ -20,7 +20,7 @@
     },
 
     fetchOne: function(req, res) {
-      Collection.findOne(req.params._id, function(err, collection) {
+      Collection.findOne({ _id: req.params.id }, function(err, collection) {
         if (err) {
           return handleError(res, err);
         } else if (!collection) {
@@ -47,7 +47,7 @@
     },
 
     editCollection: function(req, res) {
-      Collection.findOne(req.params._id, function(err, collection) {
+      Collection.findOne({ _id: req.params.id }, function(err, collection) {
         if (err) {
           return handleError(res, err);
         } else if (!collection) {
@@ -66,7 +66,7 @@
     },
 
     removeCollection: function(req, res) {
-      Collection.remove(req.params._id, function(err) {
+      Collection.remove({ _id: req.params.id }, function(err) {
         if (err) {
           return handleError(res, err);
         } else {
