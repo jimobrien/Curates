@@ -17,6 +17,7 @@ ehthumbs.db
 Thumbs.db
 
 node_modules/
+client/bower_components/
 .sass-cache/
 dist/*
 client/lib

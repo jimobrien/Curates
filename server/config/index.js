@@ -7,15 +7,15 @@
     var collectionRouter = express.Router();
     var authRouter = express.Router();
 
-    // Setup routes
-    var userRoutes = require('../users/index')(userRouter);
-    var collectionRoutes = require('../collections/index')(collectionRouter);
-    var authRoutes = require('../auth/index')(authRouter);
-
     // Listen on API endpoints
-    app.use('/users', userRoutes);
-    app.use('/collections', collectionRoutes);
-    app.use('/auth', authRoutes);
+    app.use('/users', userRouter);
+    app.use('/collections', collectionRouter);
+    app.use('/auth', authRouter);
+
+    // Setup routes
+    require('../users/index')(userRouter);
+    require('../collections/index')(collectionRouter);
+    require('../auth/index')(authRouter);
   };
 
 })();

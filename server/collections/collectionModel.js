@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   var mongoose = require('mongoose');
-  var Schema = mongoose.Schema();
+  var Schema = mongoose.Schema;
 
   var CollectionSchema = new Schema({
     title: {
