@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var collectionController = require('./collectionController');
+  var collectionController = require('./collection.controller');
 
   module.exports = function(app) {
 

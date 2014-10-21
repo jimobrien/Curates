@@ -1,10 +1,10 @@
 (function() {
   'use strict';
 
-  var auth = require('./services.js');
+  var auth = require('./auth.services.js');
   var passport = require('passport');
   var FacebookStrategy = require('passport-facebook').Strategy;
-  var config = require('./config');
+  var config = require('./auth.config');
 
   var setup = function(User) {
     return passport.use(new FacebookStrategy({

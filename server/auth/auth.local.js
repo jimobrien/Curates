@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var auth = require('./services');
+  var auth = require('./auth.services');
   var passport = require('passport');
   var LocalStrategy = require('passport-local').Strategy;
 

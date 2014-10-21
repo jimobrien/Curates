@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var User = require('../users/userModel');
+  var User = require('../users/user.model');
 
   module.exports = function(app, express) {
 
@@ -16,9 +16,9 @@
     app.use('/google', googleRouter);
 
     // Route configuration
-    require('./local')(localRouter, User);
-    require('./facebook')(facebookRouter, User);
-    require('./google')(googleRouter, User);
+    require('./auth.local')(localRouter, User);
+    require('./auth.facebook')(facebookRouter, User);
+    require('./auth.google')(googleRouter, User);
 
   };
 

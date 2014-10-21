@@ -2,7 +2,7 @@
   'use strict';
 
   var _ = require('lodash');
-  var User = require('./userModel');
+  var User = require('./user.model');
 
   var handleError = function(res, err) {
     return res.send(500, err);

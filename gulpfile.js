@@ -1,5 +1,4 @@
 (function() {
-  'use strict';
 
   var gulp = require('gulp');
   var concat = require('gulp-concat');
@@ -9,6 +8,7 @@
   var nodemon = require('gulp-nodemon');
   var stylus = require('gulp-stylus');
   var uglify = require('gulp-uglify');
+  var ngAnnotate = require('gulp-ng-annotate');
   var lr = require('tiny-lr');
   var server = lr();
 
@@ -35,6 +35,7 @@
 
   gulp.task('lint', function () {
     return gulp.src(paths.scripts)
+      .pipe(ngAnnotate({single_quotes: true}))
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(refresh(server));

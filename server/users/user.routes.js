@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var userController = require('./userController');
+  var userController = require('./user.controller');
 
   module.exports = function(app) {
 

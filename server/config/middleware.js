@@ -26,9 +26,9 @@
     app.use('/api/auth', authRouter);
 
     // Setup routes
-    require('../users/index')(userRouter);
-    require('../collections/index')(collectionRouter);
-    require('../auth/index')(authRouter, express);
+    require('../users/user.routes')(userRouter);
+    require('../collections/collection.routes')(collectionRouter);
+    require('../auth/auth.routes')(authRouter, express);
   };
 
 })();

@@ -2,7 +2,7 @@
   'use strict';
 
   var _ = require('lodash');
-  var Collection = require('./collectionModel');
+  var Collection = require('./collection.model');
 
   var handleError = function(res, err) {
     return res.send(500, err);

@@ -5,7 +5,8 @@
   var jwt = require('jsonwebtoken');
   var expressJwt = require('express-jwt');
   var compose = require('composable-middleware');
-  var User = require('../users/userModel');
+  var User = require('../users/user.model');
+  var config = require('./auth.config');
   
   var validateJwt = expressJwt({secret: 'stuff'});
 

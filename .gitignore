@@ -21,4 +21,4 @@ client/bower_components/
 .sass-cache/
 dist/*
 client/material
-server/auth/config.js
+server/auth/auth.config
