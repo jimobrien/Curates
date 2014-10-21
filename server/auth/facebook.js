@@ -51,7 +51,7 @@
     app.get('/callback', passport.authenticate('facebook', {
       failureRedirect: '/signup',
       session: false
-    }), auth.setTokenCookie);
+    }), auth.setTokenCookie.bind(auth));
   };
   
 })();

@@ -7,7 +7,7 @@
   
   var setup = function(User) {
     return passport.use(new GoogleStrategy({
-      returnURL: 'http://localhost:3000/auth/google/return',
+      returnURL: 'http://localhost:3000/api/auth/google/return',
       realm: 'http://localhost:3000'
     },
     function(identifier, profile, done) {
@@ -52,7 +52,7 @@
     app.get('/return', passport.authenticate('google', {
       failureRedirect: '/signup',
       session: false
-    }), auth.setTokenCookie);
+    }), auth.setTokenCookie.bind(auth));
 
   };
   

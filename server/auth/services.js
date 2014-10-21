@@ -9,10 +9,6 @@
   
   var validateJwt = expressJwt({secret: 'stuff'});
 
-  var signToken = function(id) {
-    return jwt.sign({ id: id }, 'stuff', { expiresInMinutes: 60 * 5 });
-  };
-
   module.exports = {
     isAuthenticated: function() {
       return compose()
@@ -53,11 +49,16 @@
         });
     },
 
+    signToken: function(id) {
+      return jwt.sign({ id: id }, 'stuff', { expiresInMinutes: 60 * 5 });
+    },
+
     setTokenCookie: function(req, res) {
       if (!req.user) {
         return res.json(404, { message: 'Something went wrong, please try again.'});
       }
-      var token = signToken(req.user.id, req.user.role);
+
+      var token = this.signToken(req.user.id, req.user.role);
       res.cookie('token', JSON.stringify(token));
       res.redirect('/');
     }

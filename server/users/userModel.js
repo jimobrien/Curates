@@ -26,7 +26,7 @@
     },
     salt: String,
     provider: {
-      required: 'true',
+      default: 'local',
       type: String
     },
     password: String,
@@ -42,7 +42,7 @@
     }
 
     this.salt = makeSalt();
-    this.encryptPassword(this.password);
+    this.password = this.encryptPassword(this.password);
 
     next();
   });
