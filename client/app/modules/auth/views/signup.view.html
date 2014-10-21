@@ -1,4 +1,77 @@
-<div class="container top">
-  <a class="btn btn-primary" href="/api/auth/facebook">Sign in with Facebook</a>
-  <a class="btn btn-danger" href="/api/auth/google">Sign in with Google</a>
-</div>
+<form class="form-horizontal col-lg-6">
+    <fieldset>
+        <legend>Sign-Up</legend>
+        <div class="form-group">
+            <label for="email" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="email"
+                       name="email"
+                       class="form-control"
+                       id="email"
+                       ng-model="vm.user.email"
+                       placeholder="Email"
+                       required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+                <input type="password"
+                       name="password"
+                       class="form-control"
+                       id="password"
+                       ng-model="vm.user.password"
+                       placeholder="Password"
+                       required>
+            </div>
+        </div>
+                <div class="form-group">
+            <label for="password" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+                <input type="password"
+                       name="password"
+                       class="form-control"
+                       id="password"
+                       ng-model="vm.user.password"
+                       placeholder="Password"
+                       required>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="first" class="col-lg-2 control-label">First Name</label>
+          <div class="col-lg-10">
+              <input type="text"
+                     name="first"
+                     class="form-control"
+                     id="first"
+                     ng-model="vm.user.firstName"
+                     placeholder="First Name"
+                     required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="last" class="col-lg-2 control-label">Last Name</label>
+          <div class="col-lg-10">
+              <input type="text"
+                     name="last"
+                     class="form-control"
+                     id="last"
+                     ng-model="vm.user.lastName"
+                     placeholder="Last Name"
+                     required>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="api/auth/facebook">Sign up with Facebook</a>
+        <a class="btn btn-danger" href="api/auth/google">Sign up with Google</a>
+        <div class="form-group has-error">
+          <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && vm.submitted">
+             Please enter your email and password.
+          </p>
+          <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
+             Please enter a valid email.
+          </p>
+
+          <p class="help-block">{{ vm.errors.other }}</p>
+        </div>
+    </fieldset>
+</form>

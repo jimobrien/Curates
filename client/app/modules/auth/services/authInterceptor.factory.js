@@ -1,7 +1,7 @@
 ;(function(){
 'use strict';
 angular
-  .module('authentication')
+  .module('auth')
   .factory('authInterceptor', authInterceptor);
 
   /* @inject */

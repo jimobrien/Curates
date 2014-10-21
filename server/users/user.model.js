@@ -29,6 +29,11 @@
       default: 'local',
       type: String
     },
+    role: {
+      default: 'user',
+      required: true,
+      type: String
+    },
     password: String,
     favorites: [String],
     votes: [String]

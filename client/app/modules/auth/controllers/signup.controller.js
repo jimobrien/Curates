@@ -2,7 +2,7 @@
 'use strict';
 
   angular
-    .module('authentication')
+    .module('auth')
     .controller('SignupCtrl', SignupCtrl);
 
     /* @inject */
@@ -12,8 +12,6 @@
       vm.user = {};
       vm.register = register;
       vm.loginOauth = loginOauth;
-
-      //////////////
 
       function register(form) {
         vm.submitted = true;

@@ -1,7 +1,7 @@
 ;(function(){
 'use strict';
   angular
-    .module('authentication')
+    .module('auth')
     .controller('LoginCtrl', LoginCtrl);
 
     /* @inject */
@@ -12,21 +12,19 @@
       vm.login = login;
       vm.loginOauth = loginOauth;
 
-      ///////////////////////
-
       function login(form) {
         vm.submitted = true;
 
-        if(form.$valid) {
+        if (form.$valid) {
           Auth.login({
             email: vm.user.email,
             password: vm.user.password
           })
-          .then( function() {
+          .then(function() {
             // Logged in, redirect to home
             $location.path('/');
           })
-          .catch( function(err) {
+          .catch(function(err) {
             vm.errors.other = err.message;
           });
         }

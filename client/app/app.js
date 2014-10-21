@@ -3,8 +3,11 @@
 
   angular
     .module('curates', [
+      'ngCookies',
+      'restangular',
       'ui.router',
-      'restangular'
+      'core',
+      'app.modules',
     ])
     .run(run);
 

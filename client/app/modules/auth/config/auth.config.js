@@ -1,7 +1,7 @@
 ;(function(){
 'use strict';
   angular
-    .module('authentication')
+    .module('auth')
     .factory( 'authRestangular', authRestangular )
     .config( authenticationConfig );
 
@@ -13,7 +13,7 @@
   /* @inject */
   function authRestangular(Restangular){
     return Restangular.withConfig(function(RestangularConfigurer) {
-      RestangularConfigurer.setBaseUrl('http://localhost:9000/api');
+      RestangularConfigurer.setBaseUrl('http://localhost:3000/api');
     });
   }
 }).call(this);

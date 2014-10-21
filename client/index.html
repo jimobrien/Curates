@@ -1,39 +1,16 @@
 <html>
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
     <title>Curates</title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/material.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/material-wfont.css">
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
   </head>
   <body ng-app="curates">
-    <div class="navbar navbar-default">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" ui-sref="browse">Curates</a>
-      </div>
-      <div class="navbar-collapse collapse navbar-inverse-collapse">
-        <ul class="nav navbar-nav">
-          <li><a ui-sref="browse">Browse</a></li>
-          <li><a ui-sref="favorites">My Collections</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a ui-sref="signup">Sign up</a></li>
-              <li><a ui-sref="signin">Sign in</a></li>
-              <li><a ui-sref="account">Profile</a></li>
-              <li><a href="">Signout</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <div ng-include="'app/core/views/navbar.view.html'" class=""></div>
     <div class="container" ui-view></div>
 
     <script src="bower_components/angular/angular.js"></script>
@@ -44,13 +21,30 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
     <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
     <script src="app/app.js"></script>
+    <script src="app/modules/app.modules.module.js"></script>
+    <!-- Core Modules -->
     <script src="app/core/core.module.js"></script>
+    <script src="app/core/api/user/user.model.js"></script>
+    <script src="app/core/config/core.routes.js"></script>
+    <script src="app/core/config/restangular.config.js"></script>
+    <script src="app/core/controllers/home.controller.js"></script>
+    <script src="app/core/services/logger/logger.factory.js"></script>
+    <script src="app/core/services/storage/storage.service.js"></script>
+    <!-- Auth Module -->
     <script src="app/modules/auth/auth.module.js"></script>
     <script src="app/modules/auth/config/auth.config.js"></script>
     <script src="app/modules/auth/config/auth.routes.js"></script>
     <script src="app/modules/auth/controllers/login.controller.js"></script>
     <script src="app/modules/auth/controllers/signup.controller.js"></script>
     <script src="app/modules/auth/services/authInterceptor.factory.js"></script>
+    <script src="app/modules/auth/services/auth.factory.js"></script>
+    <!-- Admin Module -->
+    <script src="app/modules/admin/admin.module.js"></script>
+    <script src="app/modules/admin/config/admin.routes.js"></script>
+    <script src="app/modules/admin/controllers/admin.controller.js"></script>
   </body>
 </html>

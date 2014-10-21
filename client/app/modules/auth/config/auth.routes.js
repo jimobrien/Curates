@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('authentication')
+    .module('auth')
     .config( AuthRoutes );
 
   /* @inject */
@@ -11,12 +11,12 @@
     $stateProvider
       .state('signup', {
         url: '/signup',
-        templateUrl: 'app/modules/authentication/views/signup.view.html',
+        templateUrl: 'app/modules/auth/views/signup.view.html',
         controller: 'SignupCtrl as vm'
       })
       .state('signin', {
         url: '/signin',
-        templateUrl: 'app/modules/authentication/views/login.view.html',
+        templateUrl: 'app/modules/auth/views/login.view.html',
         controller: 'LoginCtrl as vm'
       });
   }
