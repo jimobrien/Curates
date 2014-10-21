@@ -4,6 +4,7 @@
     .module('app.modules', [
       'auth',
       'administration',
+      'collection'
     ]);
 
 }).call(this);

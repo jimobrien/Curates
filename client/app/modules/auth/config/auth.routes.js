@@ -3,7 +3,7 @@
 
   angular
     .module('auth')
-    .config( AuthRoutes );
+    .config(AuthRoutes);
 
   /* @inject */
   function AuthRoutes($stateProvider) {

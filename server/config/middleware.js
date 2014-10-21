@@ -25,10 +25,17 @@
     app.use('/api/collections', collectionRouter);
     app.use('/api/auth', authRouter);
 
+    // Wildcard routing
+    app.use('/*', handleWildCard);
+
     // Setup routes
     require('../users/user.routes')(userRouter);
     require('../collections/collection.routes')(collectionRouter);
     require('../auth/auth.routes')(authRouter, express);
   };
+
+  function handleWildCard(req, res, next) {
+    res.redirect('/');
+  }
 
 })();

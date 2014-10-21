@@ -28,7 +28,11 @@
         }
       }
     ],
-    votes: Number
+    votes: Number,
+    owner: {
+      require: true,
+      type: String
+    }
   });
 
   module.exports = mongoose.model('Collection', CollectionSchema);

@@ -16,7 +16,7 @@
       var authApi = createUrl(serverUrl, 'auth');
 
 
-      if($storage.get('user_token')){
+      if ($storage.get('user_token')) {
         currentUser = User.one('me').get().$object;
       }
 
@@ -59,7 +59,6 @@
       }
 
       function logout() {
-
         $storage.clear('user_token');
         currentUser = {};
       }
@@ -91,11 +90,11 @@
         };
 
         return $http.put(createUrl(userApi,currentUser._id,'password'), passwordData)
-          .then( function (data){
+          .then( function(data) {
             logger.logSuccess('Password Changed');
             q.resolve( data );
           })
-          .catch( function ( error ){
+          .catch( function(error){
             logger.logSuccess('Error Changing Password');
             q.reject( error );
           });
@@ -109,7 +108,7 @@
         return currentUser.hasOwnProperty('role');
       }
 
-      function isLoggedInAsync( callback ) {
+      function isLoggedInAsync(callback) {
         if(currentUser.hasOwnProperty('$promise')) {
           currentUser
             .then(function() {
