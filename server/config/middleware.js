@@ -23,7 +23,7 @@
     // Listen on API endpoints
     app.use('/api/users', userRouter);
     app.use('/api/collections', collectionRouter);
-    app.use('/api/auth', authRouter);
+    app.use('/auth', authRouter);
 
     // Wildcard routing
     app.use('/*', handleWildCard);

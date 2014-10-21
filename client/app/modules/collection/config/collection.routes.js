@@ -8,6 +8,11 @@
   /* @inject */
   function CollectionRoutes($stateProvider) {
     $stateProvider
+      .state('create', {
+        url: '/create',
+        templateUrl: 'app/modules/collection/views/create.view.html',
+        controller: 'CreateCtrl as vm'
+      })   
       .state('my', {
         url: '/my',
         templateUrl: 'app/modules/collection/views/my.view.html',
@@ -18,12 +23,7 @@
       });
 
     /* @inject */
-    function Resolved(Collection, User) {
-      // Fetch all favorites/owned collections from the user.
-      return {
-        collections: ['Collection1', 'Collection2'],
-        favorites: ['Favorite1', 'Favorite2']
-      };
+    function Resolved(Collection) {
     }
   }
 

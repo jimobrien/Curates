@@ -1,0 +1,34 @@
+<form ng-submit="vm.create(vm.collection)" class="form-horizontal col-lg-6">
+  <fieldset>
+    <legend>Create</legend>
+    <div class="form-group">
+      <label for="title" class="col-lg-2 control-label">Title</label>
+      <div class="col-lg-10">
+        <input type="text"
+               name="title"
+               class="form-control"
+               id="title"
+               ng-model="vm.collection.title"
+               placeholder="Collection Title"
+               required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-lg-2 control-label">Description</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3"
+               name="description"
+               class="form-control"
+               id="description"
+               ng-model="vm.collection.description"
+               placeholder="A Short Description..."
+               required>
+        </textarea>               
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-default" ui-sref="main">Cancel</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </fieldset>
+</form>

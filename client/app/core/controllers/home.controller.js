@@ -9,6 +9,5 @@
   function HomeCtrl($scope, Resolved) {
     var vm = this;
     vm.collections = Resolved;
-
   }
 }).call(this);

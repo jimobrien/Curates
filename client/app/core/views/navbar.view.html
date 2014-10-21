@@ -9,8 +9,8 @@
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
-      <li><a ui-sref="home">Browse</a></li>
       <li><a ui-sref="my">My Collections</a></li>
+      <li><a ui-sref="create">Create</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
@@ -19,7 +19,7 @@
           <li><a ui-sref="signup">Sign up</a></li>
           <li><a ui-sref="signin">Sign in</a></li>
           <li><a ui-sref="account">Profile</a></li>
-          <li><a href="">Signout</a></li>
+          <li><a ng-click="vm.logout()">Signout</a></li>
         </ul>
       </li>
     </ul>

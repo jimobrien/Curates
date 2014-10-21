@@ -13,7 +13,7 @@
   /* @inject */
   function authRestangular(Restangular){
     return Restangular.withConfig(function(RestangularConfigurer) {
-      RestangularConfigurer.setBaseUrl('http://localhost:3000/api');
+      RestangularConfigurer.setBaseUrl('http://localhost:3000');
     });
   }
 }).call(this);

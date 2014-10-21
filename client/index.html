@@ -3,10 +3,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/">
     <title>Curates</title>
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/material.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-material-design/dist/css/material-wfont.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material-wfont.css">
     <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
   </head>
   <body ng-app="curates">
@@ -24,9 +24,9 @@
     <script src="bower_components/toastr/toastr.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 
+    <!-- Core Modules -->
     <script src="app/app.js"></script>
     <script src="app/modules/app.modules.module.js"></script>
-    <!-- Core Modules -->
     <script src="app/core/core.module.js"></script>
     <script src="app/core/api/user/user.model.js"></script>
     <script src="app/core/api/collection/collection.model.js"></script>
@@ -52,7 +52,7 @@
     <script src="app/modules/collection/config/collection.config.js"></script>
     <script src="app/modules/collection/config/collection.routes.js"></script>
     <script src="app/modules/collection/controllers/my.controller.js"></script>
-    <script src="app/modules/collection/services/collection.factory.js"></script>
+    <script src="app/modules/collection/controllers/create.controller.js"></script>
 
   </body>
 </html>
