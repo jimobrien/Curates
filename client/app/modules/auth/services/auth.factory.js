@@ -33,13 +33,6 @@
         user: currentUser
       };
 
-      /**
-       * Authenticate user and save token
-       *
-       * @param  {Object}   user     - login info
-       * @param  {Function} callback - optional
-       * @return {Promise}
-       */
       function login(user, cb) {
         var callback = cb || angular.noop;
         var deferred = $q.defer();
@@ -65,28 +58,15 @@
         return deferred.promise;
       }
 
-      /**
-       * Delete access token and user info
-       *
-       * @param  {Function}
-       */
       function logout() {
 
         $storage.clear('user_token');
         currentUser = {};
       }
 
-      /**
-       * Create a new user
-       *
-       * @param  {Object}   user     - user info
-       * @param  {Function} callback - optional
-       * @return {Promise}
-       */
       function createUser(user, cb) {
         var callback = cb || angular.noop;
         var q = $q.defer();
-        // $http.post(serverUrl + 'users', user)
         User.post(user)
           .then(function ( response ) {
             logger.logSuccess('User '+ response.user.name +' Created');
@@ -102,14 +82,6 @@
         return q.promise;
       }
 
-      /**
-       * Change password
-       *
-       * @param  {String}   oldPassword
-       * @param  {String}   newPassword
-       * @param  {Function} callback    - optional
-       * @return {Promise}
-       */
       function changePassword(oldPassword, newPassword, cb) {
         var q = $q.defer();
         var callback = cb || angular.noop;
@@ -129,27 +101,14 @@
           });
       }
 
-      /**
-       * Gets all available info on authenticated user
-       *
-       * @return {Object} user
-       */
       function getCurrentUser() {
         return currentUser;
       }
 
-      /**
-       * Check if a user is logged in
-       *
-       * @return {Boolean}
-       */
       function isLoggedIn() {
         return currentUser.hasOwnProperty('role');
       }
 
-      /**
-       * Waits for currentUser to resolve before checking if user is logged in
-       */
       function isLoggedInAsync( callback ) {
         if(currentUser.hasOwnProperty('$promise')) {
           currentUser
@@ -166,18 +125,10 @@
         }
       }
 
-      /**
-       * Check if a user is an admin
-       *
-       * @return {Boolean}
-       */
       function isAdmin() {
         return currentUser.role === 'admin';
       }
 
-      /**
-       * Get auth token
-       */
       function getToken() {
         return $storage.get('user_token');
       }

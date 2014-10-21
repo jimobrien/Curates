@@ -14,8 +14,15 @@
       .state('home', {
         url: '/',
         templateUrl: 'app/core/views/home.view.html',
-        controller: 'HomeCtrl as vm'
+        controller: 'HomeCtrl as vm',
+        resolve: {
+          Resolved: Resolved
+        }
       });
-      
-  }
+
+    /* @inject */
+    function Resolved() {
+      return;
+    }
+ }
 }).call(this);
