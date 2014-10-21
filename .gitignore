@@ -21,3 +21,4 @@ client/bower_components/
 .sass-cache/
 dist/*
 client/lib
+server/auth/config.js

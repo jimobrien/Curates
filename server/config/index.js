@@ -15,7 +15,7 @@
     // Setup routes
     require('../users/index')(userRouter);
     require('../collections/index')(collectionRouter);
-    require('../auth/index')(authRouter);
+    require('../auth/index')(authRouter, express);
   };
 
 })();

@@ -10,17 +10,17 @@
 
   module.exports = {
     fetchAll: function(req, res) {
-      Collection.find(function(err, collections){
+      User.find(function(err, users){
         if (err) {
           return handleError(res, err);
         } else {
-          res.json(200, collections);
+          res.json(200, users);
         }
       });
     },
 
     fetchOne: function(req, res) {
-      Collection.findOne(req.params._id, function(err, collection) {
+      User.findOne(req.params._id, function(err, collection) {
         if (err) {
           return handleError(res, err);
         } else if (!collection) {
@@ -32,14 +32,14 @@
     },
 
     addUser: function(req, res) {
-      Collection.findOne(req.body, function(err, collection) {
+      User.findOne(req.body, function(err, collection) {
         if (err) {
           return handleError(res, err);
         } else if (collection) {
-          return res.send(409, 'Collection already exists');
+          return res.send(409, 'User already exists');
         } else {
-          var newCollection = new Collection(req.body);
-          newCollection.save(function(err, collection) {
+          var newUser = new User(req.body);
+          newUser.save(function(err, collection) {
             return res.json(201, collection);
           });
         }
@@ -47,14 +47,14 @@
     },
 
     editUser: function(req, res) {
-      Collection.findOne(req.params._id, function(err, collection) {
+      User.findOne(req.params._id, function(err, collection) {
         if (err) {
           return handleError(res, err);
         } else if (!collection) {
-          return res.send(404, 'Collection does not exist');
+          return res.send(404, 'User does not exist');
         } else {
-          var newCollection = _.merge(collection, req.body);
-          newCollection.save(function(err, collection) {
+          var newUser = _.merge(collection, req.body);
+          newUser.save(function(err, collection) {
             if (err) {
               return handleError(res, err);
             } else {
@@ -66,11 +66,11 @@
     },
 
     removeUser: function(req, res) {
-      Collection.remove(req.params._id, function(err) {
+      User.remove(req.params._id, function(err) {
         if (err) {
           return handleError(res, err);
         } else {
-          return res.send(204, 'Collection removed');
+          return res.send(204, 'User removed');
         }
       });
     }

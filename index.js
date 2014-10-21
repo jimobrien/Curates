@@ -15,6 +15,11 @@
 
   // Connect to the Database
   var mongo = process.env.MONGO || 'mongodb://localhost:27017';
-  mongoose.connect(mongo);
+  mongoose.connect(mongo, function(err) {
+    if (err) {
+      throw err;
+    }
+    console.log('Successfully connected to MongoDB');
+  });
 
 })();
