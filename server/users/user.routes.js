@@ -8,6 +8,7 @@
 
     // Setup API on /users
     app.get('/', userController.fetchAll);
+    app.get('/me', userController.fetchOne);
     app.get('/:id', userController.fetchOne);
     app.post('/', auth.hasRole('admin'), userController.addUser);
     app.put('/', auth.isAuthenticated(), userController.editUser);
