@@ -21,12 +21,8 @@
       });
 
     /* @inject */
-    function Resolved(Collection) {
-      return Collection.getList()
-        .then( function (response) {
-          console.log(response);
-          return response;
-        });
+    function Resolved() {
+      
     }
  }
 }).call(this);

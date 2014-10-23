@@ -6,10 +6,10 @@
     .factory('Auth', Auth);
 
     /* @inject */
-    function Auth(User, $storage, authRestangular, serverUrl, $location, $rootScope, $http, $q, logger) {
+    function Auth($storage, serverUrl, $location, $rootScope, $http, $q, logger) {
       var self = this;
 
-      var AuthService = authRestangular.all('auth');
+      // var AuthService = authRestangular.all('auth');
 
       var currentUser = {};
       var userApi = createUrl(serverUrl, 'users');
@@ -17,7 +17,8 @@
 
 
       if ($storage.get('user_token')) {
-        currentUser = User.one('me').get().$object;
+        // currentUser = User.one('me').get().$object;
+        currentUser = {};
       }
 
       return {
@@ -42,18 +43,18 @@
           password: user.password
         };
 
-        AuthService.all('local').post( LoginData )
-          .then(function ( response ) {
-            logger.logSuccess('User Logged in');
-            $storage.setUser( response );
-            currentUser = User.one('me').get().$object;
-            deferred.resolve(response);
-          })
-          .catch(function ( err ) {
-            logger.logError('Error Logging in');
-            logout();
-            deferred.reject( err );
-          }.bind(self));
+        // AuthService.all('local').post( LoginData )
+        //   .then(function ( response ) {
+        //     logger.logSuccess('User Logged in');
+        //     $storage.setUser( response );
+        //     currentUser = User.one('me').get().$object;
+        //     deferred.resolve(response);
+        //   })
+        //   .catch(function ( err ) {
+        //     logger.logError('Error Logging in');
+        //     logout();
+        //     deferred.reject( err );
+        //   }.bind(self));
 
         return deferred.promise;
       }
@@ -66,18 +67,18 @@
       function createUser(user, cb) {
         var callback = cb || angular.noop;
         var q = $q.defer();
-        User.post(user)
-          .then(function ( response ) {
-            logger.logSuccess('User '+ response.user.name +' Created');
-            $storage.setUser( response );
-            currentUser = User.one('me').get().$object;
-            q.resolve( response );
-          })
-          .catch(function (err) {
-            logger.logError('Error creating User' + user.name);
-            logout();
-            q.reject(err);
-          });
+        // User.post(user)
+        //   .then(function ( response ) {
+        //     logger.logSuccess('User '+ response.user.name +' Created');
+        //     $storage.setUser( response );
+        //     currentUser = User.one('me').get().$object;
+        //     q.resolve( response );
+        //   })
+        //   .catch(function (err) {
+        //     logger.logError('Error creating User' + user.name);
+        //     logout();
+        //     q.reject(err);
+        //   });
         return q.promise;
       }
 

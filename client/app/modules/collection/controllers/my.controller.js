@@ -8,8 +8,8 @@
   /* @inject */
   function MyCtrl(Resolved) {
     var vm = this;
-    vm.collections = Resolved.collections;
-    vm.favorites = Resolved.favorites;
+    // vm.collections = Resolved.collections;
+    // vm.favorites = Resolved.favorites;
   }
 
 }).call(this);

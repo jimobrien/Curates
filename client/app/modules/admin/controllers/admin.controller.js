@@ -14,8 +14,6 @@
     vm.showUser = showUser;
     vm.hideUser = hideUser;
 
-    //////////////
-
     function showUser(user){
       if(vm.currentUser && vm.currentUser._id === user._id) {
         return hideUser();

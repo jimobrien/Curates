@@ -2,7 +2,6 @@
 'use strict';
   angular
     .module('auth')
-    .factory( 'authRestangular', authRestangular )
     .config( authenticationConfig );
 
   /* @inject */
@@ -10,10 +9,4 @@
     $httpProvider.interceptors.push('authInterceptor');
   }
 
-  /* @inject */
-  function authRestangular(Restangular){
-    return Restangular.withConfig(function(RestangularConfigurer) {
-      RestangularConfigurer.setBaseUrl('http://localhost:3000');
-    });
-  }
 }).call(this);
