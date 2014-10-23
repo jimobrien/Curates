@@ -21,8 +21,12 @@
       });
 
     /* @inject */
-    function Resolved() {
-      
+    function Resolved(Collection) {
+      return Collection.query().$promise
+        .then(function(err, res){
+          console.log(err, res);
+          return res;
+        });
     }
  }
 }).call(this);

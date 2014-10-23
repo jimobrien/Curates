@@ -7,6 +7,7 @@
       'ui.router',
       'core',
       'app.modules',
+      'ngResource'
     ])
     .run(run);
 

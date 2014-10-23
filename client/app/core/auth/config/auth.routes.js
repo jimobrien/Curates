@@ -11,12 +11,12 @@
     $stateProvider
       .state('signup', {
         url: '/signup',
-        templateUrl: 'app/modules/auth/views/signup.view.html',
+        templateUrl: 'app/core/auth/views/signup.view.html',
         controller: 'SignupCtrl as vm'
       })
       .state('signin', {
         url: '/signin',
-        templateUrl: 'app/modules/auth/views/login.view.html',
+        templateUrl: 'app/core/auth/views/login.view.html',
         controller: 'LoginCtrl as vm'
       });
   }
