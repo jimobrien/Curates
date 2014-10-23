@@ -23,7 +23,8 @@
     /* @inject */
     function Resolved(Collection) {
       return Collection.getList()
-        .then( function ( response ) {
+        .then( function (response) {
+          console.log(response);
           return response;
         });
     }

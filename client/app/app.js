@@ -4,7 +4,6 @@
   angular
     .module('curates', [
       'ngCookies',
-      'restangular',
       'ui.router',
       'core',
       'app.modules',

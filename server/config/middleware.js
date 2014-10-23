@@ -2,8 +2,8 @@
   'use strict';
   
   var morgan = require('morgan');
-  var bodyParser = require('body-parser');
   var passport = require('passport');
+  var bodyParser = require('body-parser');
 
   module.exports = function(app, express) {
 
@@ -16,9 +16,9 @@
     app.use(passport.session());
 
     // Instantiate routers
+    var authRouter = express.Router();
     var userRouter = express.Router();
     var collectionRouter = express.Router();
-    var authRouter = express.Router();
 
     // Listen on API endpoints
     app.use('/api/users', userRouter);
@@ -30,8 +30,8 @@
 
     // Setup routes
     require('../users/user.routes')(userRouter);
-    require('../collections/collection.routes')(collectionRouter);
     require('../auth/auth.routes')(authRouter, express);
+    require('../collections/collection.routes')(collectionRouter);
   };
 
   function handleWildCard(req, res, next) {

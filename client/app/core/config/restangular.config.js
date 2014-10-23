@@ -5,7 +5,7 @@
     .config( restangularConfig );
 
   /* @inject */
-  function restangularConfig(RestangularProvider, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  function restangularConfig(RestangularProvider) {
 
     RestangularProvider.setBaseUrl('http://localhost:3000/api/');
     RestangularProvider.setRestangularFields({
